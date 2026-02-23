@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  coturn:
+    image: coturn/coturn:4.6.2
+    container_name: browser-sync-coturn
+    restart: unless-stopped
+    ports:
+      - "3478:3478/tcp"
+      - "3478:3478/udp"
+      - "5349:5349/tcp"
+      - "49160-49200:49160-49200/udp"
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf:ro
+    command: ["-c", "/etc/coturn/turnserver.conf", "--min-port", "49160", "--max-port", "49200"]

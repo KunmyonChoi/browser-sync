@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: browser-sync-bootstrap-signaling
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: browser-sync-bootstrap-signaling
+  namespaceSelector:
+    any: true
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Sync Libraries Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/apps/demo/styles.css" />
+    <link rel="stylesheet" href="/packages/file-browser/src/styles.css" />
+    <link rel="stylesheet" href="/packages/file-sync/src/styles.css" />
+  </head>
+  <body>
+    <main class="demo-root">
+      <header class="demo-header">
+        <div>
+          <h1 class="demo-title">Browser File Browser + WebPEER Sync</h1>
+          <p class="demo-subtitle">
+            Drag files between panels: file browser -> sync is copy, sync -> file browser is copy. Delete in either panel removes from sync room.
+          </p>
+        </div>
+        <div class="demo-controls">
+          <label>
+            Sync Mode
+            <select data-demo-sync-mode>
+              <option value="fallback">Local Fallback (BroadcastChannel)</option>
+              <option value="signaling">Actual Signaling (WebSocket Server)</option>
+            </select>
+          </label>
+          <label>
+            Signal URL
+            <input type="text" data-demo-signal-url value="ws://localhost:8787/signal" />
+          </label>
+          <label>
+            Token
+            <input type="text" data-demo-signal-token placeholder="optional" />
+          </label>
+          <button type="button" data-demo-apply-mode>Apply</button>
+        </div>
+      </header>
+      <p class="demo-mode-hint" data-demo-mode-hint>
+        Current mode: Local fallback
+      </p>
+
+      <section class="demo-grid">
+        <div class="demo-panel" data-demo-browser></div>
+        <div class="demo-panel" data-demo-sync></div>
+      </section>
+
+      <section class="demo-log" data-demo-log>
+        Event log
+      </section>
+    </main>
+
+    <script type="module" src="/apps/demo/main.js"></script>
+  </body>
+</html>

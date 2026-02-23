@@ -1,0 +1,135 @@
+:root {
+  --page-bg-a: #ecfeff;
+  --page-bg-b: #fefce8;
+  --panel-border: #d7e4f2;
+  --ink: #0f172a;
+  --muted: #64748b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(59, 130, 246, 0.16), transparent 32%),
+    radial-gradient(circle at 85% 18%, rgba(16, 185, 129, 0.16), transparent 28%),
+    linear-gradient(120deg, var(--page-bg-a), var(--page-bg-b));
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.demo-root {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.demo-controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(180px, 1fr));
+  gap: 8px;
+  min-width: min(580px, 100%);
+}
+
+.demo-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.demo-controls input,
+.demo-controls select,
+.demo-controls button {
+  border: 1px solid var(--panel-border);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink);
+  font-size: 12px;
+  padding: 8px 10px;
+}
+
+.demo-controls button {
+  align-self: end;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.demo-controls button:hover {
+  border-color: #8ca4bf;
+}
+
+.demo-title {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 34px);
+  line-height: 1.1;
+}
+
+.demo-subtitle {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.demo-mode-hint {
+  margin: -6px 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  min-height: 70vh;
+}
+
+.demo-panel {
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+}
+
+.demo-log {
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  max-height: 20vh;
+  overflow: auto;
+}
+
+@media (max-width: 900px) {
+  .demo-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .demo-controls {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .demo-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "browser-sync-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/demo",
+    "server/bootstrap-signaling"
+  ],
+  "scripts": {
+    "start:demo": "npm --workspace @browser-sync/demo run start",
+    "start:signal": "npm --workspace @browser-sync/bootstrap-signaling run dev"
+  }
+}

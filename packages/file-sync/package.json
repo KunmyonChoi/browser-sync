@@ -1,0 +1,9 @@
+{
+  "name": "@browser-sync/file-sync",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.js",
+  "dependencies": {
+    "@browser-sync/shared": "0.1.0"
+  }
+}

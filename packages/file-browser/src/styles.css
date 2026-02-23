@@ -1,0 +1,158 @@
+.bs-file-browser {
+  --fb-bg: #f8fafc;
+  --fb-surface: #ffffff;
+  --fb-border: #dbe3ef;
+  --fb-text: #1b2430;
+  --fb-muted: #64748b;
+  --fb-accent: #0f766e;
+  --fb-danger: #be123c;
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+  height: 100%;
+  width: 100%;
+  color: var(--fb-text);
+  border: 1px solid var(--fb-border);
+  border-radius: 12px;
+  background: linear-gradient(175deg, #f8fafc, #f3f7ff 40%, #eff5ff);
+  overflow: hidden;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+.bs-file-browser.fullscreen {
+  min-height: 100vh;
+  border-radius: 0;
+}
+
+.bs-file-browser .fb-header,
+.bs-file-browser .fb-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border-bottom: 1px solid var(--fb-border);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+}
+
+.bs-file-browser .fb-toolbar {
+  flex-wrap: wrap;
+}
+
+.bs-file-browser .fb-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 28px;
+}
+
+.bs-file-browser .fb-breadcrumb button {
+  border: 1px solid var(--fb-border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fff;
+  color: var(--fb-muted);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.bs-file-browser .fb-breadcrumb button.active {
+  border-color: var(--fb-accent);
+  color: var(--fb-accent);
+  font-weight: 600;
+}
+
+.bs-file-browser .fb-list {
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: auto;
+  flex: 1;
+}
+
+.bs-file-browser .fb-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--fb-surface);
+  border: 1px solid var(--fb-border);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.bs-file-browser .fb-entry.folder {
+  border-left: 4px solid #0ea5e9;
+}
+
+.bs-file-browser .fb-entry.file {
+  border-left: 4px solid #22c55e;
+}
+
+.bs-file-browser .fb-entry.drop-target {
+  outline: 2px dashed var(--fb-accent);
+  outline-offset: -2px;
+}
+
+.bs-file-browser .fb-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bs-file-browser .fb-entry-actions {
+  display: inline-flex;
+  gap: 6px;
+}
+
+.bs-file-browser button {
+  border: 1px solid var(--fb-border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--fb-text);
+  font-size: 12px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.bs-file-browser button:hover {
+  border-color: #9fb0c7;
+}
+
+.bs-file-browser .danger {
+  color: var(--fb-danger);
+}
+
+.bs-file-browser .fb-empty {
+  border: 1px dashed var(--fb-border);
+  border-radius: 12px;
+  text-align: center;
+  padding: 18px;
+  color: var(--fb-muted);
+  font-size: 13px;
+}
+
+.bs-file-browser .fb-status {
+  font-size: 12px;
+  color: var(--fb-muted);
+}
+
+@media (max-width: 700px) {
+  .bs-file-browser .fb-entry {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bs-file-browser .fb-entry-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
