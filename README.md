@@ -43,6 +43,25 @@ npm run start:demo
 
 Open `http://localhost:4173/apps/demo/index.html`
 
+## Deploy To Netlify
+
+This repository includes `netlify.toml` for static deployment.
+
+- Build command: `npm run build:netlify`
+- Publish directory: `dist`
+
+Git-based deploy:
+1. Import repository in Netlify.
+2. Keep default settings from `netlify.toml`.
+3. Deploy.
+
+Netlify CLI deploy:
+
+```bash
+npm run build:netlify
+npx netlify deploy --prod --dir=dist
+```
+
 ## Demo
 
 - Left: local file browser panel

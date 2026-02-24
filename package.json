@@ -9,6 +9,7 @@
     "server/bootstrap-signaling"
   ],
   "scripts": {
+    "build:netlify": "node ./scripts/build-netlify.mjs",
     "start:demo": "npm --workspace @browser-sync/demo run start",
     "start:signal": "npm --workspace @browser-sync/bootstrap-signaling run dev"
   }
